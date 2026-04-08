@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────
+   Aegis: Kinetic Archive — Global Styles
+   Theme: Ultra-dark futuristic OS
+   ────────────────────────────────────────────────────────── */
+
+/* ── Tailwind v4 Theme Tokens ── */
+@theme {
+  --color-aegis-bg-deep: #0e0e11;
+  --color-aegis-bg-card: #121214;
+  --color-aegis-bg-surface: #18181b;
+  --color-aegis-accent: #a882ff;
+  --color-aegis-accent-light: #c4a6ff;
+  --color-aegis-green: #34d399;
+  --color-aegis-blue: #60a5fa;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --animate-fadeIn: fadeIn 0.4s ease-out;
+  --animate-slideUp: slideUp 0.5s ease-out;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+}
+
+/* ── Base Styles ── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0e0e11;
+  color: #e4e4e7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Custom Scrollbars (Dark Theme) ── */
+.aegis-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.aegis-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.aegis-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(63, 63, 70, 0.5);
+  border-radius: 999px;
+}
+
+.aegis-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 82, 91, 0.7);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(63, 63, 70, 0.5) transparent;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(168, 130, 255, 0.1);
+  }
+
+  to {
+    box-shadow: 0 0 25px rgba(168, 130, 255, 0.25);
+  }
+}
+
+/* ── Selection Color ── */
+::selection {
+  background: rgba(168, 130, 255, 0.3);
+  color: white;
+}
+
+/* ── Focus Ring ── */
+:focus-visible {
+  outline: 2px solid rgba(168, 130, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
